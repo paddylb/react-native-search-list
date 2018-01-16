@@ -266,7 +266,8 @@ export default class SearchList extends Component {
     }
     this.searchStr = input
     if (input) {
-      input = sTrim(input)
+      // Removed to allow searching with spaces
+      // input = sTrim(input)
       let inputLower = input.toLowerCase()
       let tempResult = []
       // 匹配历史转账姓名
@@ -535,7 +536,7 @@ export default class SearchList extends Component {
         }]}
         searchBarBgColor={this.props.searchBarBgColor ? this.props.searchBarBgColor : '#171a23'}
         title={this.props.title}
-        hideBack={!this.props.onClickBack}
+        hideBack={true} //Don't show back button ever
         textColor={this.props.textColor}
         leftButtonStyle={this.props.leftButtonStyle}
         backIcon={this.props.backIcon}
@@ -594,7 +595,7 @@ export default class SearchList extends Component {
               : (this.props.data && this.props.data.length > 0 ? <ListView
                 initialListSize={15}
                 pageSize={10}
-                onEndReachedThreshold={30}
+                onEndReachedThreshold={2000} // Reach end threshold earlier
                 ref='searchListView'
                 dataSource={this.state.dataSource}
                 renderRow={this.renderRow.bind(this)}
@@ -665,7 +666,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     color: '#979797',
-    fontSize: 14
+    fontWeight: 'bold',
   },
   separator2: {
     backgroundColor: 'rgba(0, 0, 0, 0.1)',
@@ -673,7 +674,7 @@ const styles = StyleSheet.create({
     marginVertical: 1
   },
   toolbar: {
-    height: 56 + statusBarSize
+    height: 60 + statusBarSize
   },
   maskStyle: {
     position: 'absolute',
@@ -690,3 +691,4 @@ const styles = StyleSheet.create({
     marginVertical: 40
   }
 })
+
