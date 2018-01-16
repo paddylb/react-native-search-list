@@ -25,7 +25,8 @@ export default class CustomSearchBar extends Component {
     this.state = {
       value: props.value,
       isShowHolder: true,
-      animatedValue: new Animated.Value(0)
+      animatedValue: new Animated.Value(0),
+      hideCancel:true,
     }
   }
 
@@ -53,13 +54,15 @@ export default class CustomSearchBar extends Component {
     let toVal = 0
 
     if (isSearching) {
+      this.setState({hideCancel: false})
       this.state.animatedValue.setValue(0)
       toVal = buttonWidth
     } else {
+      this.setState({hideCancel: true})
       this.state.animatedValue.setValue(buttonWidth)
       toVal = 0
     }
-
+    
     Animated.timing(this.state.animatedValue, {
       duration: 300,
       toValue: toVal
@@ -143,8 +146,7 @@ export default class CustomSearchBar extends Component {
           </Animated.View>
           <Animated.View style={{
             backgroundColor: '#171a23',
-            width: this.state.animatedValue,
-            overflow: 'hidden'
+            width: this.state.animatedValue
           }}>
             <TouchableWithoutFeedback onPress={this.cancelSearch.bind(this)}>
               <View
@@ -161,7 +163,7 @@ export default class CustomSearchBar extends Component {
                 shouldRasterizeIOS
                 renderToHardwareTextureAndroid
               >
-                <Text style={{color: this.props.textColor ? this.props.textColor : 'white'}} numberOfLines={1}>{this.props.cancelTitle ? this.props.cancelTitle : 'Cancel'}</Text>
+                <Text style={{color: this.props.textColor ? this.props.textColor : 'white'}} numberOfLines={1}>{this.state.hideCancel ? '' : 'Cancel'}</Text>
               </View>
             </TouchableWithoutFeedback>
           </Animated.View>
