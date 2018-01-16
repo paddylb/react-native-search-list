@@ -1,8 +1,8 @@
 ### Slightly Modified to suit project
 
-1. Header larger
+1. Header larger and general styling modifications
 2. Cancel button hide 
-3. Allow searches with spaces
+3. Allow search tokens with spaces
 
 # A searchable ListView which supports Chinese PinYin and alphabetical index.
 
