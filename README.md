@@ -1,3 +1,9 @@
+### Slightly Modified to suit project
+
+1. Header larger
+2. Cancel button hide 
+3. Allow searches with spaces
+
 # A searchable ListView which supports Chinese PinYin and alphabetical index.
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
