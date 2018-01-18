@@ -121,7 +121,7 @@ export default class CustomSearchBar extends Component {
               onChangeText={this.onChange.bind(this)}
               value={this.state.value}
               underlineColorAndroid='transparent'
-              returnKeyType='search' />
+              returnKeyType='done' />
           </Animated.View>
           <Animated.View style={{
             flexDirection: 'row',
