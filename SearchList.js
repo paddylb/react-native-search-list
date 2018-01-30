@@ -71,8 +71,8 @@ export default class SearchList extends Component {
       _navBarAnimatedValue: new Animated.Value(0),
       _searchBarAnimatedValue: new Animated.Value(searchBarHeight)
     }
-    this.navBarYOffset = 48 + statusBarSize
-    this.searchBarHeightPlus = 10
+    this.navBarYOffset = 43 + statusBarSize
+    this.searchBarHeightPlus = 0
     this.searchStr = ''
     this.sectionIDs = []
     this.rowIDs = [[]]
