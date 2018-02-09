@@ -557,7 +557,7 @@ export default class SearchList extends Component {
         ref='view'
         style={[{
           top: this.props.topOffset ? this.props.topOffset : topOffset,
-          height: deviceHeight + 64,
+          height: deviceHeight + 32,
           width: deviceWidth,
           backgroundColor: '#efefef'
         }, this.props.style]}>
