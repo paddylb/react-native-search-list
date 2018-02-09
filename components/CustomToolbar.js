@@ -68,6 +68,7 @@ export default class CustomToolbar extends Component {
   render () {
     let marginTopPx = 0
     if (Platform.OS === 'android') {
+      marginTopPx = 14
     } else {
       marginTopPx = 4
     }
