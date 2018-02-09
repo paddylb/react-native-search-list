@@ -662,6 +662,7 @@ const styles = StyleSheet.create({
     height: 24,
     justifyContent: 'center',
     paddingLeft: 25,
+    paddingTop:3,
     backgroundColor: '#efefef'
   },
   sectionTitle: {
