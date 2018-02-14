@@ -668,7 +668,6 @@ const styles = StyleSheet.create({
   sectionTitle: {
     color: '#979797',
     fontWeight: 'bold',
-    margin: 3,
   },
   separator2: {
     backgroundColor: 'rgba(0, 0, 0, 0.1)',
