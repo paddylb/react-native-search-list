@@ -18,6 +18,17 @@ import PropTypes from 'prop-types'
 let statusBarSize = (Platform.OS === 'ios' ? 10 : 0)
 let deviceWidth = Dimensions.get('window').width
 
+
+const isIphoneX = () => {
+  const dimen = Dimensions.get('window');
+  return (
+    !Platform.isPad &&
+    Platform.OS === 'ios' &&
+    (dimen.height === 812 || dimen.width === 812)
+  );
+}
+
+
 export default class CustomToolbar extends Component {
 
   constructor (props) {
@@ -68,7 +79,6 @@ export default class CustomToolbar extends Component {
   render () {
     let marginTopPx = 0
     if (Platform.OS === 'android') {
-      marginTopPx = 14
     } else {
       marginTopPx = 4
     }
@@ -157,7 +167,8 @@ let styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexGrow: 1,
-    height: 25
+    height: 25,
+    paddingTop: isIphoneX() ? 20 : 0,
   },
   title: {
     flexGrow: 1,
