@@ -47,6 +47,15 @@ const topOffset = 0
 const defaultSectionHeight = 24
 const defaultCellHeight = 0
 
+const isIphoneX = () => {
+  const dimen = Dimensions.get('window');
+  return (
+    !Platform.isPad &&
+    Platform.OS === 'ios' &&
+    (dimen.height === 812 || dimen.width === 812)
+  );
+}
+
 export default class SearchList extends Component {
 
   constructor (props) {
@@ -78,6 +87,9 @@ export default class SearchList extends Component {
     this.rowIDs = [[]]
     this.tmpSource = []
   }
+
+
+
 
   static getSectionData (dataBlob, sectionID) {
     return dataBlob[sectionID]
@@ -675,7 +687,7 @@ const styles = StyleSheet.create({
     marginVertical: 1
   },
   toolbar: {
-    height: 60 + statusBarSize
+    height: isIphoneX() ? 70 + statusBarSize : 60 + statusBarSize
   },
   maskStyle: {
     position: 'absolute',
