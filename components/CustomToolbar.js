@@ -168,7 +168,7 @@ let styles = StyleSheet.create({
     justifyContent: 'center',
     flexGrow: 1,
     height: 25,
-    paddingTop: isIphoneX() ? 20 : 0,
+    paddingTop: (Platform.OS == 'android' || isIphoneX()) ? 20 : 0,
   },
   title: {
     flexGrow: 1,
